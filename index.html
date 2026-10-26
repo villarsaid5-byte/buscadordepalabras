@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Busca y resalta palabras o caracteres dentro de cualquier texto."
+    />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>Buscador de palabras</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Buscador de palabras, inicio">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span>Busca<span class="brand-accent">Palabras</span></span>
+        </a>
+        <span class="header-note">Una forma sencilla de encontrar lo importante</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> HERRAMIENTA DE TEXTO</span>
+        <h1 id="page-title">Encuentra lo que <span>buscas.</span></h1>
+        <p>Escribe o pega un texto, elige una palabra y descubre cuántas veces aparece.</p>
+      </section>
+
+      <section class="search-card" aria-label="Buscador de texto">
+        <form id="search-form" novalidate>
+          <div class="field-group">
+            <label for="source-text">Tu texto</label>
+            <textarea
+              id="source-text"
+              name="sourceText"
+              placeholder="Escribe o pega aquí el texto que quieres analizar..."
+              spellcheck="true"
+            ></textarea>
+            <div class="field-hint">
+              <span>El texto se procesa en tu navegador.</span>
+              <span id="character-count">0 caracteres</span>
+            </div>
+          </div>
+
+          <div class="field-group query-group">
+            <label for="search-term">Palabra o carácter a buscar</label>
+            <div class="input-wrap">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 4.2 4.2"></path>
+              </svg>
+              <input
+                id="search-term"
+                name="searchTerm"
+                type="text"
+                placeholder="Por ejemplo: aventura"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="button button-primary" type="submit">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 4.2 4.2"></path>
+              </svg>
+              Buscar palabra
+            </button>
+            <button class="button button-secondary" id="clear-button" type="button">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M10 11v6m4-6v6M6 7l1 13h10l1-13M9 7V4h6v3"></path>
+              </svg>
+              Limpiar
+            </button>
+          </div>
+        </form>
+
+        <div
+          id="alert-message"
+          class="alert"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+      </section>
+
+      <section id="results" class="results" aria-labelledby="results-title" hidden>
+        <div class="results-heading">
+          <div>
+            <span class="eyebrow results-eyebrow">RESULTADO DE BÚSQUEDA</span>
+            <h2 id="results-title">Tu texto, con lo importante resaltado</h2>
+          </div>
+          <div class="count-card" aria-live="polite">
+            <span id="result-count" class="count-number">0</span>
+            <span id="result-label" class="count-label">veces encontrado</span>
+          </div>
+        </div>
+        <div
+          id="processed-text"
+          class="processed-text"
+          tabindex="0"
+          aria-label="Texto procesado con coincidencias resaltadas"
+        ></div>
+        <p class="result-note">
+          La búsqueda no distingue entre mayúsculas y minúsculas.
+        </p>
+      </section>
+
+      <footer class="site-footer">
+        <span>Hecho para encontrar palabras, sin perder el hilo.</span>
+        <span class="privacy-note"><span aria-hidden="true">●</span> Privado y local</span>
+      </footer>
+    </main>
+  </body>
+</html>
