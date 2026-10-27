@@ -229,8 +229,13 @@ input {
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
+.plain-input {
+  padding-left: 15px;
+}
+
 .actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 22px;
 }

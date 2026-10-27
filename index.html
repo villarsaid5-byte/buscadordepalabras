@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles.css" />
     <meta
       name="description"
       content="Busca y resalta palabras o caracteres dentro de cualquier texto."
@@ -24,7 +25,7 @@
       <section class="hero" aria-labelledby="page-title">
         <span class="eyebrow"><span class="eyebrow-dot"></span> HERRAMIENTA DE TEXTO</span>
         <h1 id="page-title">Encuentra lo que <span>buscas.</span></h1>
-        <p>Escribe o pega un texto, elige una palabra y descubre cuántas veces aparece.</p>
+        <p>Escribe o pega un texto para buscar palabras o reemplazarlas.</p>
       </section>
 
       <section class="search-card" aria-label="Buscador de texto">
@@ -44,7 +45,7 @@
           </div>
 
           <div class="field-group query-group">
-            <label for="search-term">Palabra o carácter a buscar</label>
+            <label for="search-term">Palabra o carácter a buscar o reemplazar</label>
             <div class="input-wrap">
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
                 <circle cx="10.8" cy="10.8" r="6.8"></circle>
@@ -60,6 +61,18 @@
             </div>
           </div>
 
+          <div class="field-group query-group">
+            <label for="replacement-term">Reemplazar por</label>
+            <input
+              id="replacement-term"
+              name="replacementTerm"
+              class="plain-input"
+              type="text"
+              placeholder="Escribe la palabra nueva"
+              autocomplete="off"
+            />
+          </div>
+
           <div class="actions">
             <button class="button button-primary" type="submit">
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
@@ -67,6 +80,9 @@
                 <path d="m16 16 4.2 4.2"></path>
               </svg>
               Buscar palabra
+            </button>
+            <button class="button button-secondary" id="replace-button" type="button">
+              Reemplazar
             </button>
             <button class="button button-secondary" id="clear-button" type="button">
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
@@ -113,5 +129,6 @@
         <span class="privacy-note"><span aria-hidden="true">●</span> Privado y local</span>
       </footer>
     </main>
+    <script src="./src/index.js"></script>
   </body>
 </html>
